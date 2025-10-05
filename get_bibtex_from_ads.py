@@ -1,4 +1,6 @@
-# 
+# Before use please obtain the token from Astrophysical data system
+# https://ui.adsabs.harvard.edu/user/settings/token
+# and add the Token in line 25
 # python3 get_bibtex_from_ads.py
 
 import requests
@@ -20,7 +22,7 @@ def get_bibtex_from_ads(doi):
     
     # 需要ADS API token
     headers = {
-        'Authorization': 'Bearer ' + os.getenv('ADS_API_TOKEN', 'YourToken')
+        'Authorization': 'Bearer ' + os.getenv('ADS_API_TOKEN', 'YourToken') ### paste your token in the 'YourToken' before use
     }
     
     try:
