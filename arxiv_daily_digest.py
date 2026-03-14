@@ -1,4 +1,7 @@
-# cd '/Users/obxygene/Library/CloudStorage/Dropbox/Python Program/WebCrawler'
+
+
+
+
 # python3 arxiv_daily_digest.py              # send email
 # python3 arxiv_daily_digest.py --dry-run    # print to terminal only
 # python3 arxiv_daily_digest.py --date 2025-03-10   # fetch a specific date
@@ -24,13 +27,13 @@ import time
 from typing import List, Set
 
 # ── USER CONFIGURATION ─────────────────────────────────────────────
-RECIPIENT_EMAIL = "txiangaa@connect.ust.hk"
+RECIPIENT_EMAIL = os.getenv("RECIPIENT_EMAIL", "your_email@example.com")  # <-- fill in or set env var
 
 # SMTP settings — NetEase 163 (use env vars if present, else fill inline defaults)
 SMTP_HOST    = os.getenv("SMTP_HOST",    "smtp.163.com")
 SMTP_PORT    = int(os.getenv("SMTP_PORT", "465"))        # 465 = SSL
-SMTP_USER    = os.getenv("SMTP_USER",    "obxygene@163.com")  # <-- fill in
-SMTP_PASS    = os.getenv("SMTP_PASS",    "SKgyuYxJjP6QBUng")        # <-- authorization code (授权码), NOT login password
+SMTP_USER    = os.getenv("SMTP_USER",    "your email")  # <-- fill in
+SMTP_PASS    = os.getenv("SMTP_PASS",    "your code")        # <-- authorization code (授权码), NOT login password
 SENDER_EMAIL = os.getenv("SENDER_EMAIL", SMTP_USER)
 
 # cond-mat subcategories to fetch (comment out unwanted ones)
