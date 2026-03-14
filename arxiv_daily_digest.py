@@ -1,7 +1,4 @@
 
-
-
-
 # python3 arxiv_daily_digest.py              # send email
 # python3 arxiv_daily_digest.py --dry-run    # print to terminal only
 # python3 arxiv_daily_digest.py --date 2025-03-10   # fetch a specific date
